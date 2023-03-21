@@ -2,6 +2,7 @@ import { Route } from "react-router-dom";
 import style from "./App.module.css";
 import Cards from "./components/Cards/Cards.jsx"
 import NavBar from "./components/NavBar/NavBar.jsx"
+import characters from "./data";
 
 function App() {
 // crea un estado para guardar 
@@ -9,11 +10,11 @@ function App() {
   return (
     <div className={style.App}>
       <Route path='/' >
-      <NavBar/>
+      <NavBar onSearch={(characterID)=>window.alert(characterID)}/>
     </Route> 
 
     <Route path='/home'>
-      <Cards/>
+      <Cards characters={characters}/>
     </Route>
     </div>
     

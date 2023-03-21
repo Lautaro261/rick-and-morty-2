@@ -1,5 +1,10 @@
-export default function NavBar (){
+import SearchBar from "../Serarch Bar/SearchBar"
+
+export default function NavBar ({onSearch}){
     return(
-        <p>Esto es Nav Bar...</p>
+        <div>
+            <p>Esto es Nav Bar</p>
+            <SearchBar onSearch={onSearch}/>
+        </div>
     )
 }

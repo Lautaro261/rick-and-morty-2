@@ -1,7 +1,8 @@
 import Card from "../Card/Card.jsx"
 
-export default function Cards (props){
-    const {characters} = props; /* ARRAY [{},{},{}] con objetos */
+export default function Cards ({characters}){ /* ARRAY [{},{},{}] con objetos */
+const onClose = ()=> window.alert('se cerró')
+
     return (
         <div>
             <h3>Cards</h3>
@@ -15,7 +16,7 @@ export default function Cards (props){
                      species={char.species}
                      gender={char.gender}
                      image={char.image}
-                     onClose={props.onClose}
+                     onClose={onClose}
                     />
                     )
                     

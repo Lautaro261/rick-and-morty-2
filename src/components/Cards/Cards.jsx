@@ -1,11 +1,11 @@
 import Card from "../Card/Card.jsx"
+import style from "./Cards.module.css"
 
 export default function Cards ({characters}){ /* ARRAY [{},{},{}] con objetos */
 const onClose = ()=> window.alert('se cerró')
 
     return (
-        <div>
-            <h3>Cards</h3>
+        <div className={style.cards}>
             <ul> {
                 characters.map((char,index)=>{
                     return(

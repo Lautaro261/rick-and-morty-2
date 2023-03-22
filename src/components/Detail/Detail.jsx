@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 
 
@@ -34,6 +34,10 @@ useEffect(()=>{
                     <p>genero: {character.gender}</p>
                     <p>origne: {character.origin?.name}</p>
                     <img src={character.image} alt='img'/>
+                    <Link to='/home'>
+                    <button>Home</button>
+                    </Link>
+                    
                     </>
                 ):(
                     <h4>Loading...</h4>

@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { Route } from "react-router-dom";
+import { Route, useLocation } from "react-router-dom";
 import style from "./App.module.css";
 import Cards from "./components/Cards/Cards.jsx"
 import NavBar from "./components/NavBar/NavBar.jsx"
 import About from "./components/About/About.jsx"
 import Detail from "./components/Detail/Detail.jsx";
+import Form from "./components/Form/Form.jsx"
 
 function App() {
 // crea un estado para guardar 
@@ -40,13 +41,16 @@ function onClose(id){
   setCharacters(characters.filter((char)=> char.id !==id ))
 }
 
-
+const {pathname}= useLocation()
 
 
   return (
     <div className={style.App}>
-      <Route path='/' >
-       <NavBar onSearch={onSearch}/>
+
+      {pathname !=='/' && <NavBar onSearch={onSearch}/>}
+
+      <Route exact path='/' >
+       <Form/>
       </Route> 
 
     <Route path='/home'>

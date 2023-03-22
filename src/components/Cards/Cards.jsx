@@ -1,8 +1,8 @@
 import Card from "../Card/Card.jsx"
 import style from "./Cards.module.css"
 
-export default function Cards ({characters}){ /* ARRAY [{},{},{}] con objetos */
-const onClose = ()=> window.alert('se cerró')
+export default function Cards ({characters, onClose}){ /* ARRAY [{},{},{}] con objetos */
+
 
     return (
         <div className={style.cards}>

@@ -12,7 +12,11 @@ export default function SearchBar ({onSearch}){
 
     return (
         <div className={style.searchbar}>
-            <input type='search ' onChange={handlerChange} value={id}></input>
+            <input 
+            type='search' 
+            onChange={handlerChange} 
+            value={id}
+            ></input>
             <button onClick={()=>onSearch(id) }>Buscar</button>
         </div>
     )

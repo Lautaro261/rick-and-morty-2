@@ -13,6 +13,9 @@ export default function NavBar ({onSearch}){
                     <Link to='/about'>About</Link>
                 </li>
                 <li>
+                    <Link to='/favorites'>Favorites</Link>
+                </li>
+                <li>
                     <Link to='/'>Nada</Link>
                 </li>
             </ul>

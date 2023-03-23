@@ -1,33 +1,16 @@
-import { Link, useParams } from "react-router-dom"
-import { useEffect, useState } from "react"
-
+import { Link } from "react-router-dom"
+import  usePerHook  from '../../hooks/usePerHook.jsx'
 
 export default function Detail (){
-const {id} = useParams()
-const [character, setCharacter]= useState({})
 
-useEffect(()=>{
-    fetch(`https://rickandmortyapi.com/api/character/${id}`)
-    .then((response)=>{ return response.json()})
-    .then((char)=>{
-        if(char.name){
-            setCharacter(char)
-        }else{
-            window.alert('No hay personaje con ese id')
-        } 
-    })
-    .catch((err)=>{
-        window.alert('No hya personaje con ese id')
-    });
-    return setCharacter({})
-},[id])
+const character = usePerHook() 
+
 
 /* const {name, status,species,gender,image, origin} = character  */
     return (
         <div>
             {character.name? (
                     <>
-                    <p>esto es Detail de {id}</p>
                     <p>name: {character.name}</p>
                     <p>estado: {character.status}</p>
                     <p>especie: {character.species}</p>

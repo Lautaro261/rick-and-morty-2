@@ -6,6 +6,7 @@ import NavBar from "./components/NavBar/NavBar.jsx"
 import About from "./components/About/About.jsx"
 import Detail from "./components/Detail/Detail.jsx";
 import Form from "./components/Form/Form.jsx"
+import Favorites from "./components/Favorites/Favorites";
 
 function App() {
 // crea un estado para guardar 
@@ -87,6 +88,10 @@ function login(userData){
 
     <Route  path='/detail/:id'>
       <Detail/>
+    </Route>
+
+    <Route path='/favorites'>
+      <Favorites/>
     </Route>
 
 

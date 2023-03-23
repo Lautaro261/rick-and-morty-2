@@ -24,8 +24,6 @@ const history = useHistory()
     return alert('Personaje repetido')
   } */ 
 
-
-
   fetch(`https://rickandmortyapi.com/api/character/${id}`)
   .then((response)=> {return response.json()})
   .then((data)=>{
@@ -65,6 +63,10 @@ function login(userData){
 
 
 
+
+
+
+ 
 
   return (
     <div className={style.App}>

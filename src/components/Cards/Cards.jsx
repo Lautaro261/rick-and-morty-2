@@ -6,7 +6,6 @@ export default function Cards ({characters, onClose}){ /* ARRAY [{},{},{}] con o
 
     return (
         <div className={style.cards}>
-            <p>Esto es Card...</p>
             <ul> {
                 characters.map((char,index)=>{
                     return(

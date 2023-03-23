@@ -1,42 +1,52 @@
 import { useState } from "react"
 
-export default function Form(){
-    const [data, setData]= useState({
+export default function Form({login}){
+    const [userData, setUserData]= useState({
         username:'',
         password:'',
     })
 
-    const [error, serError]=useState({})
+    const [error, serError]=useState({
+        username:'',
+        password: '',
+    })
 
     const handlerInputChange=(event)=>{
         const value = event.target.value;
         const property = event.target.name
 
-        setData({...data, [property]: value})
+        setUserData({...userData, [property]: value})
+    }
+    const handlerOnSubmit=(event)=>{
+        event.preventDefault()
+        login(userData)
     }
 
     return (
-        <div>
-            <p>Estamos en form</p>
-            <label htmlFor="username">username </label>
+        <form onSubmit={handlerOnSubmit}>
+            <div>
+              <label htmlFor="username">username </label>
 
-            <input 
-            type='text' 
-            name='username'
-             value={data.username} 
-             onChange={handlerInputChange}
-             />
+              <input 
+              type='text' 
+              name='username'
+               value={userData.username} 
+               onChange={handlerInputChange}
+               />
+               <p>{error.username}</p>
+             </div>
+             <div>
+              <label htmlFor="password">password </label>
 
-            <label htmlFor="password">password </label>
-
-            <input 
-            type="text" 
-            name='password' 
-            value={data.password} 
-            onChange={handlerInputChange}
-            /> {/* despues cambiar type=password */}
-
-            <button type='submit' >Login</button>
-        </div>
+              <input 
+              type="text" 
+              name='password' 
+              value={userData.password} 
+              onChange={handlerInputChange}
+              /> {/* despues cambiar type=password */}
+              <p>{error.password}</p>
+             </div>
+            <button>Login</button>
+        </form>
     )
 }

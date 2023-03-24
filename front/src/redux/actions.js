@@ -20,7 +20,7 @@ export const removeFavorite=(id)=>{
 
 export const getCharacterDetail=(id)=>{
     return function (dispatch){
-        fetch(`https://rickandmortyapi.com/api/character/${id}`)
+        fetch(`http://localhost:3001/rickandmorty/detail/${id}`)
     .then((response)=>{ return response.json()})
     .then((char)=>{
         if(char.name){

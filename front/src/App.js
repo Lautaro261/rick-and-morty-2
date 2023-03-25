@@ -25,7 +25,7 @@ const history = useHistory()
     return alert('Personaje repetido')
   } */ 
 
-  fetch(`http://localhost:3001/rickandmorty/onsearch//${id}`)
+  fetch(`http://localhost:3001/rickandmorty/onsearch/${id}`)
   .then((response)=> {return response.json()})
   .then((data)=>{
     if(data.name){

@@ -1,8 +1,9 @@
 /* const http = require("http") */
 /* const getCharById = require("./controllers/getCharById");
 const getCharDetail= require("./controllers/getCharDetail"); */
-const express = require("express")
-const morgan = require("morgan")
+const express = require("express");
+const morgan = require("morgan");
+const cors = require("cors");
 const server = express();
 const PORT = 3001;
 const myRouter = require ("./routes/index");
@@ -10,6 +11,7 @@ const myRouter = require ("./routes/index");
 
 
 server.use(express.json()); 
+server.use(cors())
 server.use(morgan("dev"))
 server.use("/rickandmorty", myRouter)
 

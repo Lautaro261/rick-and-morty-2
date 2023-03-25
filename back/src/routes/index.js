@@ -8,5 +8,6 @@ myRouter.get("/onsearch/:id", getCharById)
 
 myRouter.get("/detail/:id", getCharDetail)
 
+/* /rickandmorty/onsearch//1 */
 
 module.exports = myRouter;

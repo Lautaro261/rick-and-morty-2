@@ -1,9 +1,61 @@
-const http = require("http")
-const getCharById = require("./controllers/getCharById");
-const getCharDetail= require("./controllers/getCharDetail");
+/* const http = require("http") */
+/* const getCharById = require("./controllers/getCharById");
+const getCharDetail= require("./controllers/getCharDetail"); */
+const express = require("express")
+const morgan = require("morgan")
+const server = express();
+const PORT = 3001;
+const myRouter = require ("./routes/index");
 
 
-http
+
+server.use(express.json()); 
+server.use(morgan("dev"))
+server.use("/rickandmorty", myRouter)
+
+
+
+
+
+
+server.listen(PORT, ()=>{
+    console.log(`server raised in port ${PORT}`)
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* http
 .createServer((req, res)=>{
     res.setHeader('Access-Control-Allow-Origin', '*');
 
@@ -19,4 +71,4 @@ http
         const id = url.split("/").at(-1)
         getCharDetail(res,id)
     }
-}).listen(3001, "localhost")
+}).listen(3001, "localhost") */

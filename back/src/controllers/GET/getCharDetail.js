@@ -2,7 +2,7 @@ const axios = require("axios");
 const URL = "https://rickandmortyapi.com/api/character"
 
 
-const succesHandler =(response,res)=>{
+/* const succesHandler =(response,res)=>{
     const {id, name, species, image, gender, origin}= response.data;
     res.status(200).json({id, name, species, image, gender, origin})
 
@@ -10,14 +10,22 @@ const succesHandler =(response,res)=>{
 
 const errorHandler=(error, res)=>{
     res.status(500).json(error.message)
-}
+} */
 
 
-const getCharDetail=(req, res)=>{
-    const {id}= req.params;
-    axios.get(`${URL}/${id}`)
+const getCharDetail= async(req, res)=>{
+    const {Detailid}= req.params;
+    try {
+        const response = await axios.get(`${URL}/${Detailid}`)
+        const {id, name, species, image, gender, origin} = response.data;
+        res.status(200).json({id, name, species, image, gender, origin})
+    } catch (error) {
+        res.status(400).json(error.message)
+    }
+
+    /* axios.get(`${URL}/${id}`)
     .then((response)=>succesHandler(response, res))
-    .catch((error)=>errorHandler(error,res))
+    .catch((error)=>errorHandler(error,res)) */
 
 }
 

@@ -3,6 +3,8 @@ import  Card from '../Card/Card.jsx'
 
 const Favorite = ()=>{
     const myfavorites = useSelector(state=> state.myfavorites)
+
+    /* CUANDO SE MONTA HACER EL PEDIDO DE LOS FAVORITOS */
     return (
         <div>
             {

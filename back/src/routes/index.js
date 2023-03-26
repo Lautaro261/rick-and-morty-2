@@ -7,9 +7,9 @@ const deleteFavoriteID = require ("../controllers/DELETE/deleteFavoriteId");
 
 const myRouter = Router();
 
-myRouter.get("/onsearch/:id", getCharById)
+myRouter.get("/onsearch/:Detailid", getCharById)
 
-myRouter.get("/detail/:id", getCharDetail)
+myRouter.get("/detail/:Detailid", getCharDetail)
 
 myRouter.get("/favorite", getFavorite)
 

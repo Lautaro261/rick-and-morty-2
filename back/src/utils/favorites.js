@@ -1,4 +1,4 @@
-const favorites = []
+let favorites = []
 
 
 

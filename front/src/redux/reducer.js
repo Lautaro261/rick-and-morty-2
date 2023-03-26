@@ -8,10 +8,10 @@ const initialState={
 const rootReducer= (state= initialState, action)=>{
     switch(action.type){
         case ADD_FAVORITE:
-            return{...state, myfavorites:[...state.myfavorites, action.payload]}
+            return{...state, myfavorites: action.payload /* [...state.myfavorites, action.payload] */}
             
         case REMOVE_FAVORITE:
-            return{...state, myfavorites: state.myfavorites.filter((char)=>char.id!==action.payload)}
+            return{...state, myfavorites: action.payload /* state.myfavorites.filter((char)=>char.id!==action.payload) LO HACE EL BACK*/}
 
         case GET_CHARACTER_DETAIL:
             return {...state, characterDetail: action.payload}
